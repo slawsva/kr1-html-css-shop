@@ -147,10 +147,13 @@ footer {
 .button {
   display: inline-block;
   padding: 10px 16px;
+  border: none;
   color: #ffffff;
   background-color: #0057b8;
+  font: inherit;
   text-decoration: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 /*

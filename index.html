@@ -49,20 +49,90 @@
         <h3>Товар 1</h3>
         <p>Краткое описание учебного товара.</p>
         <p>Цена: 1000 руб.</p>
+        <button class="button product-card__button" type="button" data-product="Товар 1">
+          Заказать
+        </button>
       </article>
 
       <article class="product-card">
         <h3>Товар 2</h3>
         <p>Краткое описание учебного товара.</p>
         <p>Цена: 1500 руб.</p>
+        <button class="button product-card__button" type="button" data-product="Товар 2">
+          Заказать
+        </button>
       </article>
 
       <article class="product-card">
         <h3>Товар 3</h3>
         <p>Краткое описание учебного товара.</p>
         <p>Цена: 2000 руб.</p>
+        <button class="button product-card__button" type="button" data-product="Товар 3">
+          Заказать
+        </button>
       </article>
     </section>
+
+    <p class="success-message" id="success-message" hidden>
+      Заявка отправлена. Мы свяжемся с вами после проверки данных.
+    </p>
+
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+      <h2 id="order-dialog-title">Оформление заявки</h2>
+
+      <form id="order-form" action="#" method="post">
+        <input type="hidden" id="selected-product" name="product">
+
+        <div class="form-field">
+          <label for="customer-name">Имя</label>
+          <input type="text" id="customer-name" name="customer-name" required>
+        </div>
+
+        <div class="form-field">
+          <label for="customer-email">E-mail</label>
+          <input type="email" id="customer-email" name="customer-email" required>
+        </div>
+
+        <div class="form-field">
+          <label for="customer-phone">Телефон</label>
+          <input type="tel" id="customer-phone" name="customer-phone" required>
+          <small>Например: +7 900 000-00-00</small>
+        </div>
+
+        <div class="form-field">
+          <label for="delivery-date">Желаемая дата</label>
+          <input type="date" id="delivery-date" name="delivery-date">
+        </div>
+
+        <div class="form-field">
+          <label for="order-topic">Тема заявки</label>
+          <select id="order-topic" name="order-topic" required>
+            <option value="">Выберите тему</option>
+            <option value="purchase">Покупка товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="order-comment">Комментарий</label>
+          <textarea id="order-comment" name="order-comment" rows="4"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label>
+            <input type="checkbox" name="agreement" required>
+            Согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="button" type="submit">Отправить заявку</button>
+          <button class="button" type="button" id="close-order-dialog">Закрыть</button>
+        </div>
+      </form>
+    </dialog>
+
     <aside class="aside-info">
       <h2>Информация для студентов</h2>
       <p>
@@ -77,5 +147,7 @@
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
