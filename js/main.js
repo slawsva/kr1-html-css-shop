@@ -35,6 +35,18 @@ const orderForm = document.getElementById('order-form');
 // Получаем сообщение об успешной отправке.
 const successMessage = document.getElementById('success-message');
 
+// Отмечаем поля с ошибками, когда браузерская валидация останавливает отправку.
+orderForm.addEventListener('invalid', (event) => {
+  event.target.setAttribute('aria-invalid', 'true');
+}, true);
+
+// Убираем признак ошибки, когда пользователь исправляет поле.
+orderForm.addEventListener('input', (event) => {
+  if (event.target.willValidate && event.target.checkValidity()) {
+    event.target.removeAttribute('aria-invalid');
+  }
+});
+
 // Обрабатываем отправку формы.
 orderForm.addEventListener('submit', (event) => {
   // Отменяем стандартную отправку формы,
