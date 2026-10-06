@@ -10,6 +10,12 @@ const closeDialogButton = document.getElementById('close-order-dialog');
 // Получаем скрытое поле, в которое будет записан выбранный товар.
 const selectedProductInput = document.getElementById('selected-product');
 
+const agreementCheckbox=document.getElementById('agreement');
+const submitButton = document.getElementById('submit-order');
+agreementCheckbox.addEventListener('change', () =>{
+  submitButton.disabled =!agreementCheckbox.checked;
+})
+
 // Перебираем все кнопки «Заказать».
 orderButtons.forEach((button) => {
   button.addEventListener('click', () => {
