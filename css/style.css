@@ -40,7 +40,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 160px;
+  scroll-padding-top: 300px;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
 }
 
 body {
@@ -178,6 +183,27 @@ textarea:focus-visible {
 .site-footer {
   padding: var(--space-lg);
   background-color: var(--color-surface);
+}
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
+.breadcrumbs a + a::before {
+  content: " / ";
+  color: var(--color-muted);
 }
 
 .back-to-top {
