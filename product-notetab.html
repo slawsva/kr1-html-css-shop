@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Карточка товара NoteTab 11 с описанием, ценой и таблицей характеристик.">
+  <title>NoteTab 11 — карточка товара</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="page-intro__eyebrow">Карточка товара</p>
+      <h1 class="page-intro__title">NoteTab 11</h1>
+      <p class="page-intro__text">Описание, характеристики и условия выбора устройства.</p>
+    </section>
+
+    <section class="product-detail">
+      <div class="product-detail__media">
+        <span class="product-detail__badge">Новинка</span>
+        <img class="product-detail__image" src="images/product-tablet.svg" alt="Планшет NoteTab 11">
+      </div>
+
+      <div class="product-detail__content">
+        <p class="product-detail__category">Планшет для конспектов</p>
+        <h2 class="product-detail__title">NoteTab 11</h2>
+        <p class="product-detail__text">NoteTab 11 помогает вести конспекты, читать учебники и смотреть лекции. Большой экран удобен для заметок и видеосвязи.</p>
+        <p class="product-detail__price">34 990 руб.</p>
+        <div class="product-detail__actions">
+          <a class="button" href="order.html?product=notetab">Оформить заявку</a>
+          <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Характеристики</h2>
+      <div class="table-wrap">
+        <table class="spec-table">
+          <caption class="spec-table__caption">Технические характеристики NoteTab 11</caption>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Значение</th>
+              <th scope="col">Пояснение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Экран</th><td>11 дюймов</td><td>Для чтения и рукописных заметок.</td></tr>
+            <tr><th scope="row">Память</th><td>8 ГБ</td><td>Для учебных приложений и видеосвязи.</td></tr>
+            <tr><th scope="row">Накопитель</th><td>128 ГБ</td><td>Для книг, конспектов и презентаций.</td></tr>
+            <tr><th scope="row">Автономность</th><td>До 10 часов</td><td>Для занятий в течение дня.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="aside-info">
+      <h2 class="aside-info__title">Совет по выбору</h2>
+      <p class="aside-info__text">Сравните характеристики с вашими задачами. В заявке можно задать вопросы о выбранном товаре.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Вернуться наверх">↑</a>
+  <script src="js/main.js"></script>
+</body>
+</html>

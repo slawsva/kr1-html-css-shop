@@ -1,92 +1,93 @@
-// Получаем модальное окно по id.
 const orderDialog = document.getElementById('order-dialog');
-
-// Получаем все кнопки заказа в карточках товаров.
 const orderButtons = document.querySelectorAll('.product-card__button');
-
-// Получаем кнопку закрытия модального окна.
 const closeDialogButton = document.getElementById('close-order-dialog');
-
-// Получаем скрытое поле, в которое будет записан выбранный товар.
 const selectedProductInput = document.getElementById('selected-product');
-
-const agreementCheckbox=document.getElementById('agreement');
-const submitButton = document.getElementById('submit-order');
-agreementCheckbox.addEventListener('change', () =>{
-  submitButton.disabled =!agreementCheckbox.checked;
-})
-
-// Перебираем все кнопки «Заказать».
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    // Получаем название товара из data-атрибута.
-    const productName = button.dataset.product;
-
-    // Записываем название товара в скрытое поле формы.
-    selectedProductInput.value = productName;
-
-    // Открываем модальное окно.
-    orderDialog.showModal();
-  });
-}); 
-
-// Закрываем модальное окно по кнопке «Закрыть».
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
-
-// Получаем форму заявки.
 const orderForm = document.getElementById('order-form');
-
-// Получаем сообщение об успешной отправке.
 const successMessage = document.getElementById('success-message');
+const agreementCheckbox = document.getElementById('agreement');
+const submitButton = document.getElementById('submit-order');
+const productSelect = document.getElementById('order-topic');
 
-// Отмечаем поля с ошибками, когда браузерская валидация останавливает отправку.
-orderForm.addEventListener('invalid', (event) => {
-  event.target.setAttribute('aria-invalid', 'true');
-}, true);
-
-// Убираем признак ошибки, когда пользователь исправляет поле.
-orderForm.addEventListener('input', (event) => {
-  if (event.target.willValidate && event.target.checkValidity()) {
-    event.target.removeAttribute('aria-invalid');
+if (!orderDialog && productSelect) {
+  const product = new URLSearchParams(window.location.search).get('product');
+  if (Array.from(productSelect.options).some((option) => option.value === product)) {
+    productSelect.value = product;
   }
-});
+}
 
-// Обрабатываем отправку формы.
-orderForm.addEventListener('submit', (event) => {
-  // Отменяем стандартную отправку формы,
-  // потому что backend пока не подключён.
-  event.preventDefault();
+if (agreementCheckbox && submitButton) {
+  const updateSubmitState = () => {
+    submitButton.disabled = !agreementCheckbox.checked;
+  };
+  updateSubmitState();
+  agreementCheckbox.addEventListener('change', updateSubmitState);
+  orderForm.addEventListener('reset', () => {
+    submitButton.disabled = true;
+    orderForm.querySelectorAll('[aria-invalid]').forEach((field) => {
+      field.removeAttribute('aria-invalid');
+    });
+  });
+}
 
-  // Сбрасываем предыдущие признаки ошибок.
-  const formElements = Array.from(orderForm.elements);
+if (orderDialog) {
+  orderButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (selectedProductInput) {
+        selectedProductInput.value = button.dataset.product || '';
+      }
 
-  formElements.forEach((element) => {
-    if (element.willValidate) {
-      element.removeAttribute('aria-invalid');
+      orderDialog.showModal();
+    });
+  });
+}
+
+if (closeDialogButton && orderDialog) {
+  closeDialogButton.addEventListener('click', () => {
+    orderDialog.close();
+  });
+}
+
+if (orderForm) {
+  orderForm.addEventListener('invalid', (event) => {
+    event.target.setAttribute('aria-invalid', 'true');
+  }, true);
+
+  orderForm.addEventListener('input', (event) => {
+    if (event.target.willValidate && event.target.checkValidity()) {
+      event.target.removeAttribute('aria-invalid');
     }
   });
 
-  // Проверяем встроенные HTML-ограничения формы.
-  if (!orderForm.checkValidity()) {
+  orderForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formElements = Array.from(orderForm.elements);
+
     formElements.forEach((element) => {
-      if (element.willValidate && !element.checkValidity()) {
-        element.setAttribute('aria-invalid', 'true');
+      if (element.willValidate) {
+        element.removeAttribute('aria-invalid');
       }
     });
 
-    // Показываем стандартные сообщения браузера.
-    orderForm.reportValidity();
-    return;
-  }
+    if (!orderForm.checkValidity()) {
+      formElements.forEach((element) => {
+        if (element.willValidate && !element.checkValidity()) {
+          element.setAttribute('aria-invalid', 'true');
+        }
+      });
 
-  // Показываем сообщение об успешной отправке.
-  successMessage.hidden = false;
+      orderForm.reportValidity();
+      return;
+    }
 
-  // Очищаем форму.
-  orderForm.reset();
+    if (successMessage) {
+      successMessage.hidden = false;
+    }
 
-  // Закрываем модальное окно.
-  orderDialog.close();
-});
+    orderForm.reset();
+
+    if (orderDialog) {
+      orderDialog.close();
+    }
+  });
+}

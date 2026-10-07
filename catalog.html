@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог товаров учебного интернет-магазина со статическими фильтрами и карточками.">
+  <title>Каталог товаров</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="page-intro__eyebrow">Каталог</p>
+      <h1 class="page-intro__title">Товары для учёбы и разработки</h1>
+      <p class="page-intro__text">Выберите устройство, сравните категории и отправьте заявку на консультацию.</p>
+    </section>
+
+    <section class="catalog-layout" aria-label="Каталог товаров">
+      <aside class="catalog-filter" aria-label="Фильтры каталога">
+        <h2 class="catalog-filter__title">Фильтры</h2>
+        <div class="catalog-filter__group">
+          <h3 class="catalog-filter__subtitle">Категория</h3>
+          <label class="catalog-filter__option"><input type="checkbox" checked> Ноутбуки</label>
+          <label class="catalog-filter__option"><input type="checkbox" checked> Планшеты</label>
+          <label class="catalog-filter__option"><input type="checkbox"> Аксессуары</label>
+        </div>
+        <div class="catalog-filter__group">
+          <h3 class="catalog-filter__subtitle">Цена</h3>
+          <p class="catalog-filter__text">до 60 000 руб.</p>
+        </div>
+        <a class="button button--secondary" href="order.html">Оставить заявку</a>
+      </aside>
+
+      <div class="product-grid">
+        <article class="product-card product-card--hit">
+          <span class="product-card__badge">Хит</span>
+          <img class="product-card__image" src="images/product-laptop.svg" alt="Ноутбук StudyBook 14">
+          <p class="product-card__category">Ноутбуки</p>
+          <h2 class="product-card__title">StudyBook 14</h2>
+          <p class="product-card__description">Компактный ноутбук с быстрым SSD и экраном 14 дюймов.</p>
+          <p class="product-card__price">59 990 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <a class="button" href="order.html?product=studybook">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card product-card--new">
+          <span class="product-card__badge">Новинка</span>
+          <img class="product-card__image" src="images/product-tablet.svg" alt="Планшет NoteTab 11">
+          <p class="product-card__category">Планшеты</p>
+          <h2 class="product-card__title">NoteTab 11</h2>
+          <p class="product-card__description">Планшет для заметок, просмотра лекций и учебных материалов.</p>
+          <p class="product-card__price">34 990 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product-notetab.html">Подробнее</a>
+            <a class="button" href="order.html?product=notetab">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge">Скидка</span>
+          <img class="product-card__image" src="images/product-headphones.svg" alt="Наушники FocusSound">
+          <p class="product-card__category">Аксессуары</p>
+          <h2 class="product-card__title">FocusSound</h2>
+          <p class="product-card__description">Наушники с шумоподавлением для занятий дома и в дороге.</p>
+          <p class="product-card__price">8 990 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product-focussound.html">Подробнее</a>
+            <a class="button" href="order.html?product=focussound">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-keyboard.svg" alt="Клавиатура CodeKeys">
+          <p class="product-card__category">Аксессуары</p>
+          <h2 class="product-card__title">CodeKeys</h2>
+          <p class="product-card__description">Механическая клавиатура для программирования и набора текста.</p>
+          <p class="product-card__price">6 490 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product-codekeys.html">Подробнее</a>
+            <a class="button" href="order.html?product=codekeys">Заказать</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Вернуться наверх">↑</a>
+  <script src="js/main.js"></script>
+</body>
+</html>
