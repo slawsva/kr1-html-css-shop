@@ -38,27 +38,34 @@
     </section>
 
     <section class="catalog-layout" aria-label="Каталог товаров">
-      <aside class="catalog-filter" aria-label="Фильтры каталога">
-        <h2 class="catalog-filter__title">Фильтры</h2>
-        <div class="catalog-filter__group">
-          <h3 class="catalog-filter__subtitle">Категория</h3>
-          <label class="catalog-filter__option"><input type="checkbox" checked> Ноутбуки</label>
-          <label class="catalog-filter__option"><input type="checkbox" checked> Планшеты</label>
-          <label class="catalog-filter__option"><input type="checkbox"> Аксессуары</label>
-        </div>
-        <div class="catalog-filter__group">
-          <h3 class="catalog-filter__subtitle">Цена</h3>
-          <p class="catalog-filter__text">до 60 000 руб.</p>
-        </div>
-        <a class="button button--secondary" href="order.html">Оставить заявку</a>
+      <aside class="catalog-filters" aria-label="Фильтры каталога">
+        <h2 class="catalog-filters__title">Фильтры</h2>
+        <form class="filters-form" action="#" method="get">
+          <fieldset>
+            <legend>Категория</legend>
+            <label for="category-all"><input id="category-all" type="checkbox" name="category" value="all"> Все товары</label>
+            <label for="category-popular"><input id="category-popular" type="checkbox" name="category" value="popular"> Популярные</label>
+            <label for="category-new"><input id="category-new" type="checkbox" name="category" value="new"> Новинки</label>
+          </fieldset>
+          <fieldset>
+            <legend>Цена</legend>
+            <label for="price-from">От</label>
+            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label for="price-to">До</label>
+            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+          </fieldset>
+          <button class="button" type="submit">Применить</button>
+        </form>
       </aside>
 
-      <div class="product-grid">
+      <section class="catalog-products">
+        <h2 class="catalog-products__title">Список товаров</h2>
+        <div class="products-grid">
         <article class="product-card product-card--hit">
           <span class="product-card__badge">Хит</span>
           <img class="product-card__image" src="images/product-laptop.svg" alt="Ноутбук StudyBook 14">
           <p class="product-card__category">Ноутбуки</p>
-          <h2 class="product-card__title">StudyBook 14</h2>
+          <h3 class="product-card__title">StudyBook 14</h3>
           <p class="product-card__description">Компактный ноутбук с быстрым SSD и экраном 14 дюймов.</p>
           <p class="product-card__price">59 990 руб.</p>
           <div class="product-card__actions">
@@ -71,7 +78,7 @@
           <span class="product-card__badge">Новинка</span>
           <img class="product-card__image" src="images/product-tablet.svg" alt="Планшет NoteTab 11">
           <p class="product-card__category">Планшеты</p>
-          <h2 class="product-card__title">NoteTab 11</h2>
+          <h3 class="product-card__title">NoteTab 11</h3>
           <p class="product-card__description">Планшет для заметок, просмотра лекций и учебных материалов.</p>
           <p class="product-card__price">34 990 руб.</p>
           <div class="product-card__actions">
@@ -84,7 +91,7 @@
           <span class="product-card__badge">Скидка</span>
           <img class="product-card__image" src="images/product-headphones.svg" alt="Наушники FocusSound">
           <p class="product-card__category">Аксессуары</p>
-          <h2 class="product-card__title">FocusSound</h2>
+          <h3 class="product-card__title">FocusSound</h3>
           <p class="product-card__description">Наушники с шумоподавлением для занятий дома и в дороге.</p>
           <p class="product-card__price">8 990 руб.</p>
           <div class="product-card__actions">
@@ -96,7 +103,7 @@
         <article class="product-card">
           <img class="product-card__image" src="images/product-keyboard.svg" alt="Клавиатура CodeKeys">
           <p class="product-card__category">Аксессуары</p>
-          <h2 class="product-card__title">CodeKeys</h2>
+          <h3 class="product-card__title">CodeKeys</h3>
           <p class="product-card__description">Механическая клавиатура для программирования и набора текста.</p>
           <p class="product-card__price">6 490 руб.</p>
           <div class="product-card__actions">
@@ -104,7 +111,8 @@
             <a class="button" href="order.html?product=codekeys">Заказать</a>
           </div>
         </article>
-      </div>
+        </div>
+      </section>
     </section>
   </main>
 
