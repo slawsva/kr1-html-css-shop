@@ -70,18 +70,18 @@
         </div>
 
         <div class="order-form__field form-field">
-          <label class="order-form__checkbox">
-            <input type="checkbox" name="agreement" required>
+          <label class="order-form__checkbox" for="agreement">
+            <input type="checkbox" id="agreement" name="agreement" required>
             Согласен на обработку данных
           </label>
         </div>
 
         <div class="order-form__actions form-actions">
-          <button class="button" type="submit">Отправить заявку</button>
+          <button class="button" id="submit-order" type="submit" disabled>Отправить заявку</button>
           <button class="button button--secondary" type="reset">Очистить</button>
         </div>
       </form>
-      <p class="success-message" id="success-message" hidden>Заявка отправлена. Мы свяжемся с вами после проверки данных.</p>
+      <p class="success-message" id="success-message" role="status" hidden>Данные проверены. Это учебная форма: заявка не отправляется на сервер.</p>
     </section>
   </main>
 

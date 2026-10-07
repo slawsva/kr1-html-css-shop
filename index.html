@@ -30,8 +30,8 @@
         <p class="hero__eyebrow">Каталог техники для учебного проекта</p>
         <h1 class="hero__title">Учебный интернет-магазин</h1>
         <p class="hero__text">
-          Многостраничный HTML/CSS-сайт с каталогом, карточкой товара, формой заявки,
-          таблицей характеристик и единой навигацией.
+          Ноутбуки, планшеты и аксессуары для лекций, домашних заданий и первых проектов.
+          Выберите устройство и оставьте заявку на консультацию.
         </p>
         <div class="hero__actions">
           <a class="button" href="catalog.html">Перейти в каталог</a>
@@ -44,19 +44,19 @@
     </section>
 
     <section class="section" id="advantages">
-      <h2 class="section__title">Преимущества проекта</h2>
+      <h2 class="section__title">Всё для учёбы</h2>
       <div class="advantages-grid">
         <article class="advantage-card">
-          <h3 class="advantage-card__title">Единая структура</h3>
-          <p class="advantage-card__text">Все страницы используют общую шапку, навигацию, подвал и CSS-файл.</p>
+          <h3 class="advantage-card__title">Для занятий каждый день</h3>
+          <p class="advantage-card__text">Лёгкие устройства для конспектов, видеосвязи и работы с документами.</p>
         </article>
         <article class="advantage-card">
           <h3 class="advantage-card__title">Понятный каталог</h3>
-          <p class="advantage-card__text">Товары разложены по карточкам, есть категории и статический блок фильтров.</p>
+          <p class="advantage-card__text">Описание, цена и характеристики помогут сравнить устройства.</p>
         </article>
         <article class="advantage-card">
-          <h3 class="advantage-card__title">Готовая заявка</h3>
-          <p class="advantage-card__text">Форма содержит обязательные поля, подписи, состояния фокуса и ошибок.</p>
+          <h3 class="advantage-card__title">Помощь с выбором</h3>
+          <p class="advantage-card__text">Расскажите, для каких задач нужна техника, и задайте вопросы в заявке.</p>
         </article>
       </div>
     </section>
@@ -87,7 +87,7 @@
           <p class="product-card__description">Планшет для конспектов, просмотра лекций и работы с файлами.</p>
           <p class="product-card__price">34 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <a class="button button--secondary" href="product-notetab.html">Подробнее</a>
             <button class="button product-card__button" type="button" data-product="NoteTab 11">Заказать</button>
           </div>
         </article>
@@ -99,7 +99,7 @@
           <p class="product-card__description">Беспроводные наушники с шумоподавлением для занятий.</p>
           <p class="product-card__price">8 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <a class="button button--secondary" href="product-focussound.html">Подробнее</a>
             <button class="button product-card__button" type="button" data-product="FocusSound">Заказать</button>
           </div>
         </article>
@@ -107,22 +107,25 @@
     </section>
 
     <aside class="aside-info">
-      <h2 class="aside-info__title">Информация для студентов</h2>
+      <h2 class="aside-info__title">Как выбрать устройство</h2>
       <p class="aside-info__text">
-        Эта версия проекта подготовлена для контрольной работы №1: добавлены страницы,
-        таблица, каталог, Flex/Grid-раскладки, БЭМ-классы и базовое позиционирование.
+        Для работы с кодом выбирайте ноутбук, для конспектов — планшет.
+        Наушники и удобная клавиатура помогут обустроить рабочее место.
       </p>
     </aside>
 
-    <p class="success-message" id="success-message" hidden>
-      Заявка отправлена. Мы свяжемся с вами после проверки данных.
+    <p class="success-message" id="success-message" role="status" hidden>
+      Данные проверены. Это учебная форма: заявка не отправляется на сервер.
     </p>
 
     <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
       <h2 class="order-dialog__title" id="order-dialog-title">Быстрая заявка</h2>
 
       <form class="order-form" id="order-form" action="#" method="post">
-        <input type="hidden" id="selected-product" name="product">
+        <div class="order-form__field form-field">
+          <label class="order-form__label" for="selected-product">Выбранный товар</label>
+          <input class="order-form__input" type="text" id="selected-product" name="product" readonly required>
+        </div>
 
         <div class="order-form__field form-field">
           <label class="order-form__label" for="customer-name">Имя</label>
@@ -156,14 +159,14 @@
         </div>
 
         <div class="order-form__field form-field">
-          <label class="order-form__checkbox">
-            <input type="checkbox" name="agreement" required>
+          <label class="order-form__checkbox" for="agreement">
+            <input type="checkbox" id="agreement" name="agreement" required>
             Согласен на обработку данных
           </label>
         </div>
 
         <div class="order-form__actions form-actions">
-          <button class="button" type="submit">Отправить заявку</button>
+          <button class="button" id="submit-order" type="submit" disabled>Отправить заявку</button>
           <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
         </div>
       </form>
