@@ -27,8 +27,8 @@
 
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html" title="Перейти на главную страницу">Главная</a>
-      <span aria-current="page">Каталог</span>
+      <a class="breadcrumbs__link" href="index.html" title="Перейти на главную страницу">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Каталог</span>
     </nav>
 
     <section class="page-intro">
@@ -41,18 +41,18 @@
       <aside class="catalog-filters" aria-label="Фильтры каталога">
         <h2 class="catalog-filters__title">Фильтры</h2>
         <form class="filters-form" action="#" method="get">
-          <fieldset>
-            <legend>Категория</legend>
-            <label for="category-all"><input id="category-all" type="checkbox" name="category" value="all"> Все товары</label>
-            <label for="category-popular"><input id="category-popular" type="checkbox" name="category" value="popular"> Популярные</label>
-            <label for="category-new"><input id="category-new" type="checkbox" name="category" value="new"> Новинки</label>
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Категория</legend>
+            <label class="filters-form__label" for="category-all"><input id="category-all" type="checkbox" name="category" value="all"> Все товары</label>
+            <label class="filters-form__label" for="category-popular"><input id="category-popular" type="checkbox" name="category" value="popular"> Популярные</label>
+            <label class="filters-form__label" for="category-new"><input id="category-new" type="checkbox" name="category" value="new"> Новинки</label>
           </fieldset>
-          <fieldset>
-            <legend>Цена</legend>
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Цена</legend>
+            <label class="filters-form__label" for="price-from">От</label>
+            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label class="filters-form__label" for="price-to">До</label>
+            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
           </fieldset>
           <button class="button" type="submit" title="Отправить параметры фильтров">Применить</button>
         </form>
@@ -69,34 +69,34 @@
           <p class="product-card__description">Компактный ноутбук с быстрым SSD и экраном 14 дюймов.</p>
           <p class="product-card__price">59 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product.html" title="Посмотреть характеристики StudyBook 14">Подробнее</a>
-            <a class="button" href="order.html?product=studybook" title="Оформить заявку на StudyBook 14">Заказать</a>
+            <a class="button button--secondary product-card__button" href="product.html" title="Посмотреть характеристики StudyBook 14">Подробнее</a>
+            <a class="button product-card__button" href="order.html?product=studybook" title="Оформить заявку на StudyBook 14">Заказать</a>
           </div>
         </article>
 
         <article class="product-card product-card--new">
-          <span class="product-card__badge">Новинка</span>
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
           <img class="product-card__image" src="images/product-tablet.svg" alt="Планшет NoteTab 11" title="Планшет NoteTab 11">
           <p class="product-card__category">Планшеты</p>
           <h3 class="product-card__title">NoteTab 11</h3>
           <p class="product-card__description">Планшет для заметок, просмотра лекций и учебных материалов.</p>
           <p class="product-card__price">34 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product-notetab.html" title="Посмотреть характеристики NoteTab 11">Подробнее</a>
-            <a class="button" href="order.html?product=notetab" title="Оформить заявку на NoteTab 11">Заказать</a>
+            <a class="button button--secondary product-card__button" href="product-notetab.html" title="Посмотреть характеристики NoteTab 11">Подробнее</a>
+            <a class="button product-card__button" href="order.html?product=notetab" title="Оформить заявку на NoteTab 11">Заказать</a>
           </div>
         </article>
 
         <article class="product-card product-card--discount">
-          <span class="product-card__badge">Скидка</span>
+          <span class="product-card__badge product-card__badge--discount">Скидка</span>
           <img class="product-card__image" src="images/product-headphones.svg" alt="Наушники FocusSound" title="Наушники FocusSound">
           <p class="product-card__category">Аксессуары</p>
           <h3 class="product-card__title">FocusSound</h3>
           <p class="product-card__description">Наушники с шумоподавлением для занятий дома и в дороге.</p>
           <p class="product-card__price">8 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product-focussound.html" title="Посмотреть характеристики FocusSound">Подробнее</a>
-            <a class="button" href="order.html?product=focussound" title="Оформить заявку на FocusSound">Заказать</a>
+            <a class="button button--secondary product-card__button" href="product-focussound.html" title="Посмотреть характеристики FocusSound">Подробнее</a>
+            <a class="button product-card__button" href="order.html?product=focussound" title="Оформить заявку на FocusSound">Заказать</a>
           </div>
         </article>
 
@@ -107,8 +107,8 @@
           <p class="product-card__description">Механическая клавиатура для программирования и набора текста.</p>
           <p class="product-card__price">6 490 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product-codekeys.html" title="Посмотреть характеристики CodeKeys">Подробнее</a>
-            <a class="button" href="order.html?product=codekeys" title="Оформить заявку на CodeKeys">Заказать</a>
+            <a class="button button--secondary product-card__button" href="product-codekeys.html" title="Посмотреть характеристики CodeKeys">Подробнее</a>
+            <a class="button product-card__button" href="order.html?product=codekeys" title="Оформить заявку на CodeKeys">Заказать</a>
           </div>
         </article>
         </div>
