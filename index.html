@@ -77,31 +77,31 @@
           <p class="product-card__description">Лёгкий ноутбук для учёбы, презентаций и веб-разработки.</p>
           <p class="product-card__price">59 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product.html" title="Посмотреть характеристики StudyBook 14">Подробнее</a>
+            <a class="button button--secondary product-card__button" href="product.html" title="Посмотреть характеристики StudyBook 14">Подробнее</a>
             <button class="button product-card__button" type="button" data-product="StudyBook 14" title="Открыть заявку на StudyBook 14">Заказать</button>
           </div>
         </article>
 
         <article class="product-card product-card--new">
-          <span class="product-card__badge">Новинка</span>
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
           <img class="product-card__image" src="images/product-tablet.svg" alt="Планшет NoteTab 11" title="Планшет NoteTab 11">
           <h3 class="product-card__title">NoteTab 11</h3>
           <p class="product-card__description">Планшет для конспектов, просмотра лекций и работы с файлами.</p>
           <p class="product-card__price">34 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product-notetab.html" title="Посмотреть характеристики NoteTab 11">Подробнее</a>
+            <a class="button button--secondary product-card__button" href="product-notetab.html" title="Посмотреть характеристики NoteTab 11">Подробнее</a>
             <button class="button product-card__button" type="button" data-product="NoteTab 11" title="Открыть заявку на NoteTab 11">Заказать</button>
           </div>
         </article>
 
         <article class="product-card product-card--discount">
-          <span class="product-card__badge">Скидка</span>
+          <span class="product-card__badge product-card__badge--discount">Скидка</span>
           <img class="product-card__image" src="images/product-headphones.svg" alt="Наушники FocusSound" title="Наушники FocusSound">
           <h3 class="product-card__title">FocusSound</h3>
           <p class="product-card__description">Беспроводные наушники с шумоподавлением для занятий.</p>
           <p class="product-card__price">8 990 руб.</p>
           <div class="product-card__actions">
-            <a class="button button--secondary" href="product-focussound.html" title="Посмотреть характеристики FocusSound">Подробнее</a>
+            <a class="button button--secondary product-card__button" href="product-focussound.html" title="Посмотреть характеристики FocusSound">Подробнее</a>
             <button class="button product-card__button" type="button" data-product="FocusSound" title="Открыть заявку на FocusSound">Заказать</button>
           </div>
         </article>
@@ -124,28 +124,28 @@
       <h2 class="order-dialog__title" id="order-dialog-title">Быстрая заявка</h2>
 
       <form class="order-form" id="order-form" action="#" method="post">
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="selected-product">Выбранный товар</label>
           <input class="order-form__input" type="text" id="selected-product" name="product" readonly required>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="customer-name">Имя</label>
           <input class="order-form__input" type="text" id="customer-name" name="customer-name" required>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="customer-email">E-mail</label>
           <input class="order-form__input" type="email" id="customer-email" name="customer-email" required>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="customer-phone">Телефон</label>
           <input class="order-form__input" type="tel" id="customer-phone" name="customer-phone" required>
-          <small>Например: +7 900 000-00-00</small>
+          <small class="order-form__hint">Например: +7 900 000-00-00</small>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="order-topic">Тема заявки</label>
           <select class="order-form__input" id="order-topic" name="order-topic" required>
             <option value="">Выберите тему</option>
@@ -155,19 +155,19 @@
           </select>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="order-comment">Комментарий</label>
           <textarea class="order-form__input" id="order-comment" name="order-comment" rows="4"></textarea>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__checkbox" for="agreement">
-            <input type="checkbox" id="agreement" name="agreement" required>
+            <input class="order-form__checkbox-control" type="checkbox" id="agreement" name="agreement" required>
             Согласен на обработку данных
           </label>
         </div>
 
-        <div class="order-form__actions form-actions">
+        <div class="order-form__actions">
           <button class="button" id="submit-order" type="submit" disabled title="Проверить данные заявки">Отправить заявку</button>
           <button class="button button--secondary" type="button" id="close-order-dialog" title="Закрыть окно заявки">Закрыть</button>
         </div>

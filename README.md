@@ -113,3 +113,13 @@ GitHub Pages: https://slawsva.github.io/kr1-html-css-shop/
 
 ФИО: Сакулин Святослав Антонович  
 Группа: ЭФБО-02-25
+
+## Практическая работа №7
+
+Ветка: `refactor/bem-css-classes`. Аудит выявил смешение `form-field`/`form-actions` с элементами `order-form`, селекторы тегов внутри хлебных крошек, фильтров и таблиц, а также зависимость кнопок и бейджей от родительского блока.
+
+После рефакторинга используются прямые классы: `order-form__field`, `order-form__actions`, `order-form__hint`, `breadcrumbs__link`, `breadcrumbs__current`, `filters-form__group`, `filters-form__legend`, `filters-form__label`, `filters-form__input`, `spec-table__cell`. Заголовки таблиц и бейджи имеют модификаторы вместе с базовым классом.
+
+Основные блоки: `site-header`, `site-nav`, `breadcrumbs`, `hero`, `section`, `products-grid`, `product-card`, `catalog-layout`, `catalog-filters`, `filters-form`, `product-detail`, `spec-table`, `order-form`, `order-dialog`, `success-message`, `site-footer`. Карточка независима от страницы. Кнопка совмещает блок `button` и элемент `product-card__button` (микс).
+
+CSS не использует ID и inline-стили. ID сохранены для якорей, подписей полей и JavaScript. Обработчик модального окна выбирает только кнопки с `data-product`, поэтому ссылки на страницу заявки не запускают его. Рефакторинг сохраняет оформление и сценарий заявки.

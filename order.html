@@ -27,8 +27,8 @@
 
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html" title="Перейти на главную страницу">Главная</a>
-      <span aria-current="page">Заявка</span>
+      <a class="breadcrumbs__link" href="index.html" title="Перейти на главную страницу">Главная</a>
+      <span class="breadcrumbs__current" aria-current="page">Заявка</span>
     </nav>
 
     <section class="page-intro">
@@ -43,23 +43,23 @@
         <p class="form-section__text">Поля с именем, e-mail, телефоном, товаром и согласием обязательны для заполнения.</p>
       </div>
       <form class="order-form order-form--page" id="order-form" action="#" method="post">
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="customer-name">Имя</label>
           <input class="order-form__input" type="text" id="customer-name" name="customer-name" required>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="customer-email">E-mail</label>
           <input class="order-form__input" type="email" id="customer-email" name="customer-email" required>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="customer-phone">Телефон</label>
           <input class="order-form__input" type="tel" id="customer-phone" name="customer-phone" required>
-          <small>Например: +7 900 000-00-00</small>
+          <small class="order-form__hint">Например: +7 900 000-00-00</small>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="order-topic">Выбранный товар</label>
           <select class="order-form__input" id="order-topic" name="order-topic" required>
             <option value="">Выберите товар</option>
@@ -70,19 +70,19 @@
           </select>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__label" for="order-comment">Комментарий</label>
           <textarea class="order-form__input" id="order-comment" name="order-comment" rows="5" placeholder="Напишите вопрос или удобное время для связи"></textarea>
         </div>
 
-        <div class="order-form__field form-field">
+        <div class="order-form__field">
           <label class="order-form__checkbox" for="agreement">
-            <input type="checkbox" id="agreement" name="agreement" required>
+            <input class="order-form__checkbox-control" type="checkbox" id="agreement" name="agreement" required>
             Согласен на обработку данных
           </label>
         </div>
 
-        <div class="order-form__actions form-actions">
+        <div class="order-form__actions">
           <button class="button" id="submit-order" type="submit" disabled title="Проверить данные заявки">Отправить заявку</button>
           <button class="button button--secondary" type="reset" title="Очистить поля формы">Очистить</button>
         </div>
