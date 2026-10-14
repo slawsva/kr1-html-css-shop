@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Наушники и клавиатура для учебного места: категория аксессуаров учебного магазина.">
+  <title>Аксессуары — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" title="Перейти на главную страницу">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html" title="Перейти на главную страницу">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html" title="Открыть каталог товаров">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html" title="Открыть контактную информацию">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages" title="Перейти к преимуществам магазина">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular" title="Перейти к популярным товарам">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts" title="Перейти к разделу обратной связи">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current" aria-current="page">Аксессуары</span>
+    </nav>
+    <section class="page-intro">
+      <p class="page-intro__eyebrow">Категория · 2 товара</p>
+      <h1 class="page-intro__title">Аксессуары для учебного места</h1>
+      <p class="page-intro__text">Наушники для лекций и видеосвязи, клавиатура для программирования и конспектов. Выберите дополнение к ноутбуку или планшету.</p>
+      <a class="button button--secondary" href="catalog.html#comparison">Сравнить с другими устройствами</a>
+    </section>
+    <section class="section" aria-labelledby="accessories-title">
+      <h2 class="section__title" id="accessories-title">Наушники и клавиатура</h2>
+      <div class="products-grid products-grid--category">
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge product-card__badge--discount">Скидка</span>
+          <img class="product-card__image" src="images/product-headphones.svg" alt="Наушники FocusSound" title="Наушники FocusSound">
+          <p class="product-card__category">Аксессуары</p>
+          <h3 class="product-card__title">FocusSound</h3>
+          <p class="product-card__description">Наушники с шумоподавлением для занятий дома и в дороге.</p>
+          <p class="product-card__price">8 990 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary product-card__button" href="product-focussound.html" title="Посмотреть характеристики FocusSound">Подробнее</a>
+            <a class="button product-card__button" href="order.html?product=focussound" title="Оформить заявку на FocusSound">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-keyboard.svg" alt="Клавиатура CodeKeys" title="Клавиатура CodeKeys">
+          <p class="product-card__category">Аксессуары</p>
+          <h3 class="product-card__title">CodeKeys</h3>
+          <p class="product-card__description">Механическая клавиатура для программирования и набора текста.</p>
+          <p class="product-card__price">6 490 руб.</p>
+          <div class="product-card__actions">
+            <a class="button button--secondary product-card__button" href="product-codekeys.html" title="Посмотреть характеристики CodeKeys">Подробнее</a>
+            <a class="button product-card__button" href="order.html?product=codekeys" title="Оформить заявку на CodeKeys">Заказать</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <aside class="aside-info">
+      <h2 class="aside-info__title">Проверьте совместимость</h2>
+      <p class="aside-info__text">FocusSound подключается через Bluetooth 5.3, а CodeKeys использует USB-C. Перед выбором проверьте доступные подключения вашего устройства. Дополнительный вопрос можно указать в заявке.</p>
+      <a href="catalog.html">Вернуться ко всем товарам</a>
+    </aside>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Вернуться наверх" title="Вернуться к началу страницы">↑</a>
+  <script src="js/main.js"></script>
+</body>
+</html>
