@@ -618,3 +618,68 @@ textarea:focus-visible {
     grid-template-areas: "filters" "products";
   }
 }
+
+/* Практическая №8: FAQ, отзывы, сравнение и категория */
+.faq__item {
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+}
+.faq__question {
+  padding: var(--space-md);
+  color: var(--color-primary);
+  font-weight: bold;
+  cursor: pointer;
+}
+.faq__question:hover {
+  background-color: var(--color-surface-accent);
+}
+.faq__question:focus-visible,
+.table-wrap:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+.faq__answer {
+  margin: 0;
+  padding: 0 var(--space-md) var(--space-md);
+}
+.reviews__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+.review-card__title {
+  margin-top: 0;
+  font-size: 18px;
+}
+.review-card__quote {
+  margin: 0 0 var(--space-md);
+}
+.review-card__author {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+.review-card__link {
+  margin-top: auto;
+}
+.comparison__table {
+  min-width: 800px;
+}
+.products-grid--category {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 860px) {
+  .reviews__list,
+  .products-grid--category {
+    grid-template-columns: 1fr;
+  }
+}
